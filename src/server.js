@@ -8,6 +8,7 @@ app.use(
   cors({
     origin: [
       "kl-radio.vercel.app",
+      "https://klradio-frontend.vercel.app",
       "https://klradio-member-signup-mphu.vercel.app",
       "https://klradio.in/",
       "https://6000-firebase-studio-1765370272139.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev",
@@ -19,18 +20,18 @@ app.use(
   })
 )
 
-;(async () => {
-  try {
-    await sequelize.authenticate()
-    console.log("Database connected successfully")
+  ; (async () => {
+    try {
+      await sequelize.authenticate()
+      console.log("Database connected successfully")
 
-    await sequelize.sync()
+      await sequelize.sync()
 
-    app.listen(process.env.PORT, () => {
-      console.log(`Server running on port ${process.env.PORT}`)
-    })
-  } catch (error) {
-    console.error("Failed to start server:", error)
-    process.exit(1)
-  }
-})()
+      app.listen(process.env.PORT, () => {
+        console.log(`Server running on port ${process.env.PORT}`)
+      })
+    } catch (error) {
+      console.error("Failed to start server:", error)
+      process.exit(1)
+    }
+  })()
