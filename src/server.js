@@ -8,7 +8,7 @@ app.use(
   cors({
     origin: [
       "kl-radio.vercel.app",
-      "https://klradio-member-signup-mphu.vercel.app"
+      "https://klradio-member-signup-mphu.vercel.app",
       "https://klradio.in/",
       "https://6000-firebase-studio-1765370272139.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev",
       "https://signup-guardian.vercel.app",
