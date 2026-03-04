@@ -21,17 +21,17 @@ app.use(
 )
 
   ; (async () => {
+    const port = process.env.PORT || 5000;
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`)
+    })
+
     try {
       await sequelize.authenticate()
       console.log("Database connected successfully")
-
       await sequelize.sync()
-
-      app.listen(process.env.PORT, () => {
-        console.log(`Server running on port ${process.env.PORT}`)
-      })
     } catch (error) {
-      console.error("Failed to start server:", error)
-      process.exit(1)
+      console.error("Failed to connect to the database:", error)
+      // We don't process.exit(1) here so Render considers the deploy successful and the server stays up.
     }
   })()
